@@ -11,7 +11,7 @@
 
 # ADG2188
 
-Arduino library for ADG2188 8x8 switch with I2C.
+Arduino library for ADG2188 8x8 (cross-point) matrix switch with I2C.
 
 
 ## Description
@@ -20,32 +20,28 @@ Arduino library for ADG2188 8x8 switch with I2C.
 
 The library is **NOT** tested with hardware yet. Feedback is welcome.
 
-This library is to use an ADG2188 8x8 switch from a microcontroller.
-The ADG2188 device implements a matrix of switches of 8 rows and 8 columns.
+This library is to use an ADG2188 8x8 cross-point matrix switch from a microcontroller.
+That means the ADG2188 device implements a matrix of switches of 8 rows and 8 columns.
+Every row has a switch to every column, which can be on or off.
 
-The device can operate in two modi, direct (transparent) or latched (delayed)
-mode. In the first setting a switch will be visible immediately, while the 
-latch mode waits until they can all be switched simultaneously.
+The device can operate in two modi, direct (transparent) or latched (delayed) mode.
+In the first setting a switch will be visible immediately, while the latch mode 
+waits until they can all be switched simultaneously.
 
 The device has a reset line that can be "pulsed LOW" which will reset 
-all registers and switches to OFF.
+all registers and switches to OFF state.
 
+The library is based on datasheet Rev. B, www.analog.com
 
-
-Based on datasheet Rev. B, www.analog.com
-
+- https://www.analog.com/media/en/technical-documentation/data-sheets/adg2188.pdf
 
 Feedback as always is welcome.
 
 
-### Compatibles
-
-There exists 8x12 ADG2128 but that device is not compatible with this library.
-
-
 ### Related
 
-TODO ADG2128 library? 
+- https://github.com/RobTillaart/ADG2128 8x12 cross-point switch
+- https://github.com/RobTillaart/ADG2188 8x8 cross-point switch
 
 
 ## I2C
@@ -146,6 +142,7 @@ Error handling is to be elaborated.
 
 - improve documentation
 - get hardware to test
+- keep in sync with ADG2188
 
 #### Should
 
@@ -158,6 +155,7 @@ Error handling is to be elaborated.
 #### Could
 
 - cache status of switches to speed up On/Off
+  - import export cache
 - some ideas.
 ```
   //  switches on all X, for a given y
