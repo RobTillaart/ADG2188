@@ -107,7 +107,7 @@ TODO: run performance sketch on hardware. feedback is welcome.
 - **void on(uint8_t row, uint8_t col)** idem.
 - **void off(uint8_t row, uint8_t col)** idem.
 - **bool isOn(uint8_t row, uint8_t col)** returns true if switch os on.
-- **uint8_t isOn(uint8_t col)** get a whole column at once as bit mask.
+- **uint8_t isOnMask(uint8_t col)** get a whole column at once as bit mask.
 
 Convenience wrappers, sw = 0..63, row = sw / 8, col = sw % 8;
 - **void on(uint8_t sw)**

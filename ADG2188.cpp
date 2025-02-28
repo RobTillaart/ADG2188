@@ -82,7 +82,7 @@ bool ADG2188::isOn(uint8_t row, uint8_t col)
   return (value & (1 << row)) > 0;
 }
 
-uint8_t ADG2188::isOn(uint8_t col)
+uint8_t ADG2188::isOnMask(uint8_t col)
 {
   if (col > 7) return false;
   //  Table 8 datasheet
@@ -93,19 +93,6 @@ uint8_t ADG2188::isOn(uint8_t col)
 
   return _readback(mask);
 }
-
-// void ADG2188::onRow(uint8_t col)
-// {
-// }
-// void ADG2188::onColumn(uint8_t row)
-// {
-// }
-// void ADG2188::offRow(uint8_t col)
-// {
-// }
-// void ADG2188::offColumn(uint8_t row)
-// {
-// }
 
 
 /////////////////////////////////////////////

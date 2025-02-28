@@ -39,13 +39,12 @@ public:
   void     on(uint8_t row, uint8_t col);
   void     off(uint8_t row, uint8_t col);
   bool     isOn(uint8_t row, uint8_t col);
-  uint8_t  isOn(uint8_t col);  //  get a whole column at once as bit mask.
+  uint8_t  isOnMask(uint8_t col);  //  get a whole column at once as bit mask.
 
   //  WRAPPERS.
   void     on(uint8_t sw)   { on(sw / 8, sw % 8); };
   void     off(uint8_t sw)  { off(sw / 8, sw % 8); };
-  //  TODO overload problem
-  // uint8_t  isOn(uint8_t sw) { return isOn(sw / 8, sw % 8); };
+  uint8_t  isOn(uint8_t sw) { return isOn(sw / 8, sw % 8); };
 
 
   //  MODE
