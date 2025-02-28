@@ -4,7 +4,7 @@
 //  AUTHOR: Rob Tillaart
 //    DATE: 2025-02-28
 // VERSION: 0.1.0
-// PURPOSE: Arduino library for ADG2188 8x8 switch with I2C.
+// PURPOSE: Arduino library for ADG2188 8x8 (cross-point) matrix switch with I2C.
 //     URL: https://github.com/RobTillaart/ADG2188
 //
 
@@ -13,20 +13,22 @@
 #include "Wire.h"
 
 
-#define ADG2188_LIB_VERSION         (F("0.1.0"))
+#define ADG2188_LIB_VERSION             (F("0.1.0"))
+
+#define ADG2188_DEFAULT_ADDRESS         0x70
 
 //  ERROR CODES
 //  values <> 0 are errors.
-#define ADG2188_OK                  0x00
-#define ADG2188_CRC_ERROR           0x01
-#define ADG2188_NOT_READY           0x10
-#define ADG2188_REQUEST_ERROR       0x11
+#define ADG2188_OK                      0x00
+#define ADG2188_CRC_ERROR               0x01
+#define ADG2188_NOT_READY               0x10
+#define ADG2188_REQUEST_ERROR           0x11
 
 
 class ADG2188
 {
 public:
-  ADG2188(uint8_t address, TwoWire *wire = &Wire);
+  ADG2188(uint8_t address = ADG2188_DEFAULT_ADDRESS, TwoWire *wire = &Wire);
 
   bool     begin();
   bool     isConnected();

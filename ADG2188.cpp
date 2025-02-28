@@ -3,7 +3,7 @@
 //  AUTHOR: Rob Tillaart
 //    DATE: 2025-02-28
 // VERSION: 0.1.0
-// PURPOSE: Arduino library for ADG2188 8x8 switch with I2C.
+// PURPOSE: Arduino library for ADG2188 8x8 (cross-point) matrix switch with I2C.
 //     URL: https://github.com/RobTillaart/ADG2188
 
 

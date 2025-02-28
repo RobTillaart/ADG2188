@@ -41,7 +41,7 @@ unittest_teardown()
 
 unittest(test_constants)
 {
-  assertEqual(ADG2188_DEFAULT_ADDRESS, 0x2A);
+  assertEqual(ADG2188_DEFAULT_ADDRESS, 0x70);
   
   assertEqual(ADG2188_OK           , 0x00);
   assertEqual(ADG2188_CRC_ERROR    , 0x01);
@@ -52,10 +52,10 @@ unittest(test_constants)
 
 unittest(test_constructor)
 {
-  ADG2188 acd;
+  ADG2188 adg;
 
-  assertEqual(acd.getAddress(), ADG2188_DEFAULT_ADDRESS);
-  assertEqual(acd.getLastError(), 0);
+  assertEqual(adg.getAddress(), ADG2188_DEFAULT_ADDRESS);
+  assertEqual(adg.getLastError(), 0);
 }
 
 
