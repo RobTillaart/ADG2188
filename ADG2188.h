@@ -20,9 +20,10 @@
 //  ERROR CODES
 //  values <> 0 are errors.
 #define ADG2188_OK                      0x00
-#define ADG2188_CRC_ERROR               0x01
-#define ADG2188_NOT_READY               0x10
-#define ADG2188_REQUEST_ERROR           0x11
+#define ADG2188_CRC_ERROR               0x80
+#define ADG2188_NOT_READY               0x81
+#define ADG2188_REQUEST_ERROR           0x82
+#define ADG2188_ADDRESS_ERROR           0x83
 
 
 class ADG2188
@@ -74,7 +75,7 @@ private:
   TwoWire* _wire;
 
   int      _send(uint8_t pins, uint8_t value);
-  int      _readback(uint8_t value);
+  int      _readback(uint8_t row);
 
   int      _error;
   uint8_t  _mode;
